@@ -1,0 +1,16 @@
+name: "Veerapetch Petchger"
+output_dir: "."
+navbar:
+  title: "Veerapetch Petchger"
+  right:
+    - text: "About Me"
+      href: about.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<vp2587@cumc.columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/vp2587/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/vpetchger/
+output:
+  html_document:
+    theme: darkly
