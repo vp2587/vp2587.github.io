@@ -1,8 +1,35 @@
 ---
 title: "Flexdashboard"
 output: 
-  html_document:
-    code_folding: hide
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+-----------------------------------------------------------------------
+
+### Chart C
+
+```{r}
+
+```
