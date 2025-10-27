@@ -6,16 +6,34 @@ output:
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+data("instacart")
 ```
 
 -----------------------------------------------------------------------
 
-### Chart A
+## Figure 1: Aisles with Over 10K Items Ordered {data-width=650}
 
-```{r}
-
+```{r figure1, echo = FALSE}
+instacart %>%
+  count(aisle, name = "n_obs") %>%
+  filter(n_obs > 10000) %>%
+  mutate(aisle = forcats::fct_reorder(aisle, n_obs)) %>%
+  ggplot(aes(x = aisle, y = n_obs, fill = aisle)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Aisles With Over 10000 Items Ordered",
+    x = "Aisle Names",
+    y = "Number of of Items Ordered"
+  ) +
+  viridis::scale_color_viridis(discrete = TRUE) +
+  theme_minimal() +
+  theme(legend.position = "none")
 ```
 
 -----------------------------------------------------------------------
