@@ -15,6 +15,8 @@ data("instacart")
 ```
 This flexdashboard uses the `instacart` dataset from the `p8105.datasets` package. The data was collected from the Instacart app in 2017, to analyze online grocery patterns and trends in the 3 million orders from the 200k+ users.
 
+**Reference**: “The Instacart Online Grocery Shopping Dataset 2017”, Accessed from https://www.instacart.com/datasets/grocery-shopping-2017 on October 27, 2025.
+
 ## Figure 1: Aisles with Over 10K Items Ordered {data-width=650}
 
 ```{r figure1, echo = FALSE, warning = FALSE}
