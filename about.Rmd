@@ -14,12 +14,16 @@ output:
 
 ## Education
 ### Columbia University
-* New York, NY | MS, Biostatisitcs (Public Health Data Science track)
+  New York, NY 
+  
+* MS, Biostatisitcs (Public Health Data Science track)
 
 * Expected May 2027
 
 ### University of Maryland, College Park
-* College Park, MD | BS, Public Health Science (Minor in Statistics)
+  College Park, MD 
+  
+* BS, Public Health Science (Minor in Statistics)
   
 * Completed May 2024
 

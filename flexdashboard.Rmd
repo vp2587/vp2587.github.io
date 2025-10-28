@@ -17,7 +17,7 @@ This flexdashboard uses the `instacart` dataset from the `p8105.datasets` packag
 
 ## Figure 1: Aisles with Over 10K Items Ordered {data-width=650}
 
-```{r figure1, echo = FALSE}
+```{r figure1, echo = FALSE, warning = FALSE}
 instacart %>%
   count(aisle, name = "n_obs") %>%
   filter(n_obs > 10000) %>%
@@ -45,6 +45,7 @@ instacart %>%
   group_by(product_name, order_hour_of_day) %>%
   summarize(
     orders = n(), 
+    .groups = "drop"
     ) %>%
   mutate(order_prop = orders / sum(orders)) %>%
   ggplot(aes(x = order_hour_of_day, y = order_prop, color = product_name)) +
@@ -62,8 +63,18 @@ instacart %>%
 
 -----------------------------------------------------------------------
 
-### Chart C
+### Figure 3: Distribution of Order Sizes {data-width=650}
 
-```{r}
-
+```{r figure3, echo = FALSE}
+instacart %>% 
+  count(order_id, name = "items_per_order") %>% 
+  ggplot(aes(x = items_per_order)) +
+  geom_histogram(binwidth = 1, boundary = 0, color = "blue") +
+  labs(
+    title = "Distribution of Order Sizes",
+    x = "Items per Order",
+    y = "Count of Orders"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
 ```
