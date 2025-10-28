@@ -13,8 +13,7 @@ library(plotly)
 library(p8105.datasets)
 data("instacart")
 ```
-
------------------------------------------------------------------------
+This flexdashboard uses the `instacart` dataset from the `p8105.datasets` package. The data was collected from the Instacart app in 2017, to analyze online grocery patterns and trends in the 3 million orders from the 200k+ users.
 
 ## Figure 1: Aisles with Over 10K Items Ordered {data-width=650}
 
@@ -31,17 +30,34 @@ instacart %>%
     x = "Aisle Names",
     y = "Number of of Items Ordered"
   ) +
-  viridis::scale_color_viridis(discrete = TRUE) +
+  viridis::scale_fill_viridis(discrete = TRUE) +
   theme_minimal() +
   theme(legend.position = "none")
 ```
 
 -----------------------------------------------------------------------
 
-### Chart B
+### Figure 2: Hourly Ordering Pattern of Pink Lady Apples and Coffee Ice Cream {data-width=650}
 
-```{r}
-
+```{r figure2, echo = FALSE}
+instacart %>%
+  filter(product_name %in% c("Pink Lady Apples", "Coffee Ice Cream")) %>%
+  group_by(product_name, order_hour_of_day) %>%
+  summarize(
+    orders = n(), 
+    ) %>%
+  mutate(order_prop = orders / sum(orders)) %>%
+  ggplot(aes(x = order_hour_of_day, y = order_prop, color = product_name)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Hourly Ordering Pattern of Pink Lady Apples and Coffee Ice Cream",
+    x = "Hour of Day",
+    y = "Proportion of Orders per Day"
+  ) +
+  viridis::scale_color_viridis(discrete = TRUE) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
 ```
 
 -----------------------------------------------------------------------
