@@ -9,11 +9,11 @@ output:
 
 **My Hometown and Background:** I was born in Silver Spring, Maryland, 20 minutes outside of the political capital of the world (Washington, D.C.). My family is originally from central Thailand.
 
-**Previously,** I studied public health science and statistics at the University of Maryland, College Park. Postgraduation, I transitioned to a research assistant at UMD SPH for a year.
+**Previously,** I studied public health science and statistics at the University of Maryland, College Park (UMD). Postgrad, I transitioned to a research assistant at UMD's School of Public Health for a year.
 
-I am **currently** a graduate student at Columbia University studying biostatistics. 
+I am **currently** a graduate student at Columbia University studying biostatistics. I am particularly interested in the ongoing research in regards to infectious disease modeling through a variety of data sources.
 
-You can find me...
+In my downtime you can find me...
   
   * cheering on (and attempting to mimic) **Chelsea FC** and **Max Verstappen**.
   
@@ -22,3 +22,5 @@ You can find me...
   * hopefully adding more volume to my **gym routine**,
   
   * and laughing at **cat videos**.
+  
+<img src="https://pbs.twimg.com/media/DFVBcQaWAAAttDm.jpg" alt="Beckham" style="width:50%">
