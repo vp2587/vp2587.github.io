@@ -1,74 +1,24 @@
 ---
-title: "Resume"
+title: "A Little More About Me"
 output: 
   html_document:
     code_folding: hide
     toc: true
     toc_float: true
 ---
-# Veerapetch Petchger
-240-393-6068 | vp2587@cumc.columbia.edu | New York, NY
 
-[Github](https://github.com/vp2587) | [LinkedIn](https://www.linkedin.com/in/vpetchger/)
+**My Hometown and Background:** I was born in Silver Spring, Maryland, 20 minutes outside of the political capital of the world (Washington, D.C.). My family is originally from central Thailand.
 
+**Previously,** I studied public health science and statistics at the University of Maryland, College Park. Postgraduation, I transitioned to a research assistant at UMD SPH for a year.
 
-## Education
-### Columbia University
-  New York, NY 
+I am **currently** a graduate student at Columbia University studying biostatistics. 
+
+You can find me...
   
-* MS, Biostatisitcs (Public Health Data Science track)
-
-* Expected May 2027
-
-### University of Maryland, College Park
-  College Park, MD 
+  * attempting my best impressions of **Cole Palmer** and **Max Verstappen**,
   
-* BS, Public Health Science (Minor in Statistics)
+  * discovering the best **Thai food** in NYC,
   
-* Completed May 2024
-
-## Work Experience
-### University of Maryland, School of Public Health
-#### College Park, MD
-#### Graduate Research Assistant (July 2024 - July 2025)
-* Authored an IRB exemption proposal for qualitative research interviewing public health officials, ensuring ethical compliance and establishing research protocol for pandemic communication studies
-* Conducted 10 semi-structured interviews with federal, state, and local health leaders to evaluate communication strategies that promote public acceptance of wastewater surveillance
-* Utilized NVivo to code and analyze qualitative data, identifying key communication themes to inform national public health preparedness
-
-#### Undergraduate Research Assistant (June 2023 - June 2024)
-* Facilitated 90+ hours of exposure sessions in a randomized controlled trial investigating indoor influenza transmission pathways, supporting data collection and protocol adherence for infection modeling
-* Performed DNA/RNA extraction and RT-qPCR analyses on nasal and surface samples to detect viral load and validate data accuracy across influenza test conditions
-* Recruited and coordinated 71 symptomatic student donors from the University Health Center, expanding the dataset used to identify influenza transmission hotspots across campus
-* Assessed 20+ institutional websites using the CDC Clear Communication Index to evaluate accessibility of germicidal UV information, providing recommendations to enhance clarity in public health messaging
-
-## Leadership Experience
-### Association of Thai Students in the United States of America (ATSA)
-#### Washington, D.C.
-#### Southern Regional Committee Member (August 2023 – May 2024)
-* Collaborated with the Thai Ambassador and embassy staff to organize intercollegiate networking events for students from 5 universities, including an embassy open house fostering U.S.–Thai cultural exchange
-* Developed and maintained an online community of 100+ Thai students and alumni across the DMV area, promoting dialogue, resource sharing, and cross-campus engagement
-
-### Thai Student Association (TSA) at the University of Maryland, College Park
-#### College Park, MD
-#### Co-Founder and Co-President (June 2022 - May 2024)
-* Co-founded and led the Thai Student Association to foster cross-cultural engagement, hosting 10+ sociocultural events including Thai tea socials and water lantern workshops attended by 100+ participants
-* Raised $4,000+ through food fundraisers at 10+ athletic events, financing cultural programs and outreach initiatives that expanded TSA’s visibility on campus
-* Partnered with the Royal Thai Embassy, local temples, and multicultural student organizations to co-host the Sawasdee DC Thai Festival and Songkran celebration, reaching 500+ attendees across the DMV region
-
-## Projects 
-### The Effects of Student Work-Life Balance on Weight Training Frequency
-#### October 2023 - December 2023
-* Designed and administered a survey to 33 students to analyze how academic load, extracurriculars, and housing factors influence gym attendance and training frequency
-* Performed linear regression analysis in SAS on 8 variables, identifying key predictors of training frequency and visualizing trends to support data-driven wellness recommendations
-
-## Presentations
-Pandemic Readiness Initiative Research Seminar, College Park, MD. November 2024. “Towards a wastewater surveillance and communication nexus.”
-
-## Skills
-**Programming & Statistics:** R, SAS, MATLAB
-
-**Data Analysis & Visualization:** Regression Modeling, Survey Design, Data Cleaning, Dashboarding, Data Presentation
-
-**Tools & Software:** Microsoft Suite (Excel, PowerPoint), Google Workspace, Qualitative Coding (NVivo)
-
-**Research & Communication:** Literature Review, Report Writing, Scientific Communication
+  * hopefully adding more volume to my **gym routine**,
+  
+  * and laughing at **cat videos**.

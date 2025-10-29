@@ -6,12 +6,14 @@ output:
     toc: true
     toc_float: true
 ---
-![](welcome.png)
-
 #### My name is Veerapetch Petchger, 
-I am a first-year master's candidate in biostatistics in the public health data science (PHDS) track at the Columbia University Mailman School of Public Health. This website was created as part of Homework 4 for P8105 (Data Science I) taught by Dr. Jeff Goldsmith.
+I am a first-year master's candidate in biostatistics in the public health data science (PHDS) track at the Columbia University Mailman School of Public Health. 
+
+Feel free to contact me through my information below! You can learn more about me in the tabs above.
 
 ### Contact Information
 * [Github](http://github.com/vp2587/)
 * [LinkedIn](https://www.linkedin.com/in/vpetchger/)
 * [Email](vp2587@cumc.columbia.edu)
+
+![](welcome.png)

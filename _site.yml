@@ -5,7 +5,9 @@ navbar:
   right:
     - text: "About Me"
       href: about.html
-    - text: "Flexdashboard"
+    - text: "Resume"
+      href: resume.html
+    - text: "Dashboard"
       href: flexdashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<vp2587@cumc.columbia.edu>
