@@ -1,478 +1,399 @@
-<!DOCTYPE html>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Hello!</title>
-
-<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Veerapetch Petchger, M.S. Biostatistics candidate at Columbia University: research, projects, resume, and CV.">
+<title>Veerapetch Petchger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap">
+<style>
+/* Layout: Quarto-style personal site — top navbar, photo + bio hero, project cards; projects page with sticky side TOC */
+:root{
+  --bg:#ffffff; --surface:#f6f7f9; --fg:#1f2329; --muted:#5b6470; --line:#e2e5ea;
+  --accent:#1d4f91; --accent-soft:#e8eef7; --nav:#ffffff; --paper:#ffffff; --ink:#1a1a1a; --rule:#9aa3ae;
+  --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"Source Code Pro", ui-monospace, Menlo, monospace;
 }
-</script>
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171c; --surface:#1c2027; --fg:#e6e8eb; --muted:#9aa3ae; --line:#2b313a;
+  --accent:#7fb0ef; --accent-soft:#1f2b3c; --nav:#14171c; --paper:#1c2027; --ink:#e6e8eb; --rule:#5b6470; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171c; --surface:#1c2027; --fg:#e6e8eb; --muted:#9aa3ae; --line:#2b313a;
+  --accent:#7fb0ef; --accent-soft:#1f2b3c; --nav:#14171c; --paper:#1c2027; --ink:#e6e8eb; --rule:#5b6470; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
+/* navbar */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nav);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;min-height:58px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--fg);font-size:1.1rem}
+.brand:hover{text-decoration:none}
+.mark{width:30px;height:30px;border-radius:6px;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-size:.8rem;font-weight:700;letter-spacing:.03em}
+.links{display:flex;gap:18px;flex:1}
+.links a{color:var(--muted);font-weight:600}
+.links a.on{color:var(--fg)}
+.icons{display:flex;gap:14px}
+.icons a{color:var(--muted);display:flex}
+.icons svg{width:20px;height:20px;fill:currentColor}
 
+main{padding-block:44px 24px}
+section[data-view]{display:none}
+section[data-view].show{display:block}
 
+/* hero */
+.hero{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+.side{display:flex;flex-direction:column;align-items:center;gap:14px}
+.photo{width:220px;aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:4rem;font-weight:700;letter-spacing:.02em;border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.btn{border:1px solid var(--line);padding:4px 12px;border-radius:4px;font-size:.92rem;color:var(--fg);background:var(--bg)}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+h1{font-size:2.4rem;line-height:1.15;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);font-size:1.15rem;margin:0 0 22px}
+.bio p{margin:0 0 14px;max-width:68ch}
+.seek{background:var(--accent-soft);padding:12px 16px;border-radius:6px;max-width:68ch}
 
+h2{font-size:1.6rem;margin:52px 0 18px;padding-bottom:6px;border-bottom:1px solid var(--line);text-wrap:balance}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tag{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);font-weight:600}
+.card h3{margin:0;font-size:1.2rem;line-height:1.3;text-wrap:balance}
+.card p{margin:0;color:var(--muted);font-size:.97rem;flex:1}
+.more{font-weight:600}
 
+/* projects page */
+.proj{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px}
+.toc{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));align-self:start;font-size:.95rem}
+.toc h4{margin:0 0 8px;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.toc a{display:block;padding:4px 0 4px 12px;border-left:2px solid var(--line);color:var(--muted)}
+.toc a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+.lead{color:var(--muted);margin:0 0 8px;font-size:1.1rem}
+article{padding-top:8px;scroll-margin-top:80px}
+article h2{margin-top:40px}
+.meta{font-size:.95rem;color:var(--muted);margin:0 0 12px}
+.meta b{color:var(--fg)}
+article p{max-width:72ch;margin:0 0 12px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 14px;min-width:0}
+.stat b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.85rem;color:var(--muted)}
+.tbl{overflow-x:auto;margin:10px 0 16px}
+table{border-collapse:collapse;font-size:.93rem;font-variant-numeric:tabular-nums;min-width:420px}
+th,td{text-align:left;padding:6px 14px 6px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+td.n{text-align:right}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface);padding:1px 5px;border-radius:3px}
 
+/* resume (pdf view) + cv */
+.emails{display:grid;gap:6px;width:100%;max-width:260px}
+.em{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 8px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:6px 10px}
+.em-label{grid-column:1;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.em-addr{grid-column:1;font-size:.9rem;overflow-wrap:anywhere;user-select:all}
+.copy{grid-column:2;grid-row:1/3;font:inherit;font-size:.8rem;border:1px solid var(--line);background:var(--bg);color:var(--accent);border-radius:4px;padding:3px 8px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+.mail{user-select:all}
+.actions{display:flex;flex-wrap:wrap;gap:6px 10px;color:var(--muted);margin:0 0 20px}
+.actions a{font-weight:600}
+.pdf-view{margin:0;border:1px solid var(--line);box-shadow:0 2px 14px rgba(0,0,0,.08);max-width:850px;background:#fff}
+.pdf-view img{display:block;width:100%;height:auto}
+.cv-sec{scroll-margin-top:80px}
+.cv-sec h2{margin-top:36px}
+.cv-entry{margin-bottom:20px}
+.cv-entry p{margin:0}
+.cv-date{color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums}
+.cv-role{color:var(--fg)}
+.cv-links{font-size:.95rem;margin-top:2px!important}
+.cv-entry ul{margin:6px 0 0;padding-left:20px;max-width:72ch}
+.cv-entry li{margin:3px 0}
+.skills{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 16px;max-width:72ch;margin:0}
+.skills dt{font-weight:600}
+.skills dd{margin:0}
+@media (max-width:640px){.skills{grid-template-columns:minmax(0,1fr)}.skills dd{margin-bottom:8px}}
+footer{border-top:1px solid var(--line);margin-top:56px;padding-block:20px;color:var(--muted);font-size:.9rem;text-align:center}
 
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width:820px){
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .proj{grid-template-columns:minmax(0,1fr);gap:8px}
+  .toc{position:static}
 }
-img {
-  max-width:100%;
+@media (max-width:640px){
+  .hero{grid-template-columns:minmax(0,1fr);gap:24px}
+  .photo{width:160px;font-size:3rem}
+  h1{font-size:2rem}
+  .links{gap:14px}
+  .nav{gap:12px 18px;padding-block:8px}
 }
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
-
-
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
-
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
-
 <body>
 
 
-<div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Veerapetch Petchger</a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="mark">VP</span>Veerapetch Petchger</a>
+    <nav class="links">
+      <a href="#home" data-link="home">Home</a>
+      <a href="#projects" data-link="projects">Projects</a>
+      <a href="#resume" data-link="resume">Resume</a>
+      <a href="#cv" data-link="cv">CV</a>
+    </nav>
+    <div class="icons">
+      <a href="https://github.com/vp2587" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/vpetchger/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 16 16"><path d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zM4.94 13.4V6.17H2.54v7.23h2.4zM3.74 5.18c.84 0 1.36-.56 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm4.91 8.22V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.64v3.87h2.4V9.26c0-2.22-1.18-3.25-2.77-3.25-1.28 0-1.84.7-2.16 1.2h.02V6.17h-2.4c.03.68 0 7.23 0 7.23h2.4z"/></svg></a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="about.html">About Me</a>
-</li>
-<li>
-  <a href="resume.html">Resume</a>
-</li>
-<li>
-  <a href="flexdashboard.html">Dashboard</a>
-</li>
-<li>
-  <a href="mailto:&lt;vp2587@cumc.columbia.edu&gt;">
-    <span class="fa fa-envelope fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="http://github.com/vp2587/">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://www.linkedin.com/in/vpetchger/">
-    <span class="fa fa-linkedin fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
+  </div>
+</header>
 
-<div id="header">
+<main class="wrap">
 
-<div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
+<!-- HOME -->
+<section data-view="home">
+  <div class="hero">
+    <div class="side">
+      <div class="photo" role="img" aria-label="Photo placeholder for Veerapetch Petchger">VP</div>
+      <div class="btns">
+        <a class="btn" href="https://github.com/vp2587">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/vpetchger/">LinkedIn</a>
+        <a class="btn" href="#resume">Resume</a>
+        <a class="btn" href="#cv">CV</a>
+      </div>
+      <div class="emails" aria-label="Email addresses">
+        <div class="em"><span class="em-label">Columbia</span><a class="em-addr" href="mailto:vp2587@cumc.columbia.edu">vp2587@cumc.columbia.edu</a><button class="copy" type="button" data-copy="vp2587@cumc.columbia.edu">Copy</button></div>
+        <div class="em"><span class="em-label">Personal</span><a class="em-addr" href="mailto:veerapetchger@gmail.com">veerapetchger@gmail.com</a><button class="copy" type="button" data-copy="veerapetchger@gmail.com">Copy</button></div>
+      </div>
+    </div>
+    <div class="bio">
+      <h1>Veerapetch Petchger</h1>
+      <p class="sub">M.S. Biostatistics · Columbia University Mailman School of Public Health</p>
+      <p>I'm a biostatistics master's student at Columbia University's Mailman School of Public Health, graduating in May 2027. I hold a B.S. in Public Health Science from the University of Maryland.</p>
+      <p>At Columbia, I'm a graduate research assistant at the Pei Lab and a clinical research data assistant on the Retired NFL Players Baseline Assessment Program, a brain health study of former professional football players. I also serve as a teaching assistant for the department's SQL course and as a student ambassador for the Department of Biostatistics.</p>
+      <p>My coursework and projects cover predictive modeling, machine learning, and relational database design for health data. I work primarily in R and SQL, with growing experience in Python, and I speak English, Thai, and French.</p>
+      <p class="seek"><b>Seeking full-time roles in biostatistics and health data science</b> starting in 2027.</p>
+    </div>
+  </div>
 
+  <h2>Selected work</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">Demography · Interactive tool</span>
+      <h3>South Korea population simulator</h3>
+      <p>A cohort-component projection of South Korea's population up to 100 years ahead, with adjustable fertility, migration, and wage assumptions and a taxable wage base model.</p>
+      <a class="more" href="#korea-simulator">Read more →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Oncology · Temporal validation</span>
+      <h3>Breast cancer progression-free survival</h3>
+      <p>Six regression models across two 2,000-patient cohorts. A LASSO trained on 1990–95 patients lost 21% accuracy on the 2000–05 cohort, tracking shifts in HER2 and hormonal therapy.</p>
+      <a class="more" href="#breast-cancer-pfs">Read more →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Health policy · Mobility data</span>
+      <h3>NYC congestion pricing and mobility</h3>
+      <p>A 15.8M-row daily ZIP-code origin–destination dataset built from cellphone mobility data to measure how travel changed after NYC's January 2025 congestion pricing.</p>
+      <a class="more" href="#congestion-pricing">Read more →</a>
+    </div>
+  </div>
+</section>
 
+<!-- PROJECTS -->
+<section data-view="projects">
+  <div class="proj">
+    <aside class="toc">
+      <h4>Projects</h4>
+      <a href="#korea-simulator">Korea Population</a>
+      <a href="#covid-severity">COVID-19 Severity</a>
+      <a href="#breast-cancer-pfs">Breast Cancer PFS</a>
+      <a href="#world-cup-sql">World Cup Database</a>
+      <a href="#congestion-pricing">Congestion Pricing</a>
+    </aside>
+    <div>
+      <h1>Projects</h1>
+      <p class="lead">Selected research, course, and personal projects, with code and reports.</p>
 
-<h1 class="title toc-ignore">Hello!</h1>
+      <article id="korea-simulator">
+        <h2>Korea Population</h2>
+        <p class="meta"><b>Personal project</b> · August 2026 · Interactive web tool</p>
+        <p>South Korea's fertility rate of 0.75 in 2024 is the lowest recorded anywhere. This simulator projects the country's population one year at a time, up to 100 years ahead, with a cohort-component model that ages each birth cohort forward using age-specific mortality, fertility, and migration. Readers can change the fertility rate, net migration, and time horizon and watch the population pyramid, dependency ratio, and median age respond together.</p>
+        <p>A second section combines the projection with age- and gender-specific wage and labor participation profiles to estimate the national taxable wage base. It separates the effect of a shrinking workforce from the effect of wage growth, with default assumptions taken from OECD data (0.7% annual real wage growth and the recent pace of gender pay gap closing). The page states which figures are sourced and which are modeled, and calls itself a teaching model rather than a fiscal forecast.</p>
+        <div class="stats">
+          <div class="stat"><b>0.75</b><span>2024 fertility rate (baseline)</span></div>
+          <div class="stat"><b>100 yrs</b><span>Longest projection</span></div>
+          <div class="stat"><b>51.7M</b><span>2026 starting population</span></div>
+        </div>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn" href="https://vp2587.github.io/korean_taxable_wages/">Open the simulator</a>
+          <a class="btn" href="https://github.com/vp2587/korean_taxable_wages">Code</a>
+        </div>
+      </article>
 
-</div>
+      <article id="covid-severity">
+        <h2>COVID-19 Severity</h2>
+        <p class="meta"><b>Columbia University · Data Science II (P8106) final project</b> · Spring 2026 · R, caret, glmnet, gbm, ranger, kernlab, pROC</p>
+        <p>This project asked whether flexible machine-learning models beat simpler ones at predicting severe COVID-19 infection, and which participant characteristics drive that risk. I drew a 1,000-person sample, split it 80/20 with stratification on the outcome, and trained six classifiers with shared 10-fold cross-validation folds so the comparison was fair: logistic regression, elastic-net logistic regression, random forest, AdaBoost, and linear and radial SVMs.</p>
+        <p>All six models landed close together. The linear SVM and elastic net led on the held-out test set, so the added complexity of boosting and radial kernels did not buy meaningful accuracy. I used the elastic-net predicted probability as a continuous risk score. Variable importance and partial dependence plots from the random forest and AdaBoost models agreed that vaccination status was by far the strongest predictor, followed by systolic blood pressure, age, and BMI.</p>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>Model</th><th>Type</th><th class="n">Test AUC</th></tr></thead>
+            <tbody>
+              <tr><td>SVM (linear)</td><td>Advanced</td><td class="n">0.882</td></tr>
+              <tr><td>Elastic-net logistic</td><td>Simpler</td><td class="n">0.880</td></tr>
+              <tr><td>AdaBoost</td><td>Advanced</td><td class="n">0.877</td></tr>
+              <tr><td>Logistic regression</td><td>Simpler</td><td class="n">0.874</td></tr>
+              <tr><td>SVM (radial)</td><td>Advanced</td><td class="n">0.857</td></tr>
+              <tr><td>Random forest</td><td>Advanced</td><td class="n">0.849</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
 
+      <article id="breast-cancer-pfs">
+        <h2>Breast Cancer PFS</h2>
+        <p class="meta"><b>Columbia University · Data Science II (P8106) midterm project</b> · Spring 2026 · with Heather Lu and Clement Li · R, caret, glmnet, mgcv, earth</p>
+        <p>We built prediction models for log-transformed progression-free survival in breast cancer using demographic, tumor, and treatment characteristics from a 1990–1995 cohort, then tested how well the model held up on a 2000–2005 cohort with the same study design. We compared OLS, ridge, LASSO, elastic net, a generalized additive model, and MARS with 10-fold cross-validation. Their errors overlapped, so we chose LASSO for parsimony and interpretability.</p>
+        <p>Applied to the later cohort, the earlier model's error rose by about 21%. Refitting on the later cohort showed why: the HER2 coefficient moved from clearly negative to slightly positive, consistent with the arrival of HER2-targeted therapy, the hormonal therapy effect grew stronger, and the lymph node effect weakened.</p>
+        <div class="stats">
+          <div class="stat"><b>0.684</b><span>Test RMSE, 1990–95 model</span></div>
+          <div class="stat"><b>0.829</b><span>Same model on 2000–05 cohort</span></div>
+          <div class="stat"><b>0.667</b><span>Test RMSE, refit on 2000–05</span></div>
+        </div>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn" href="https://github.com/heather-lu/breast-cancer-pfs-prediction">Code</a>
+          <a class="btn" href="https://github.com/heather-lu/breast-cancer-pfs-prediction/blob/main/dsci_II_midterm.pdf">Report</a>
+        </div>
+      </article>
 
-<div id="my-name-is-veerapetch-petchger" class="section level4">
-<h4>My name is Veerapetch Petchger,</h4>
-<p>I am a first-year master’s candidate in biostatistics in the public
-health data science (PHDS) track at the Columbia University Mailman
-School of Public Health.</p>
-<p>Feel free to contact me through my information below! You can learn
-more about me in the tabs above.</p>
-</div>
-<div id="contact-information" class="section level3">
-<h3>Contact Information</h3>
-<ul>
-<li><a href="http://github.com/vp2587/">Github</a></li>
-<li><a href="https://www.linkedin.com/in/vpetchger/">LinkedIn</a></li>
-<li><a href="vp2587@cumc.columbia.edu">Email</a></li>
-</ul>
-<p><img src="welcome.png" /></p>
-</div>
+      <article id="world-cup-sql">
+        <h2>World Cup Database</h2>
+        <p class="meta"><b>Columbia University · SQL final project</b> · MySQL, CTEs, window functions, views</p>
+        <p>I designed a relational database of men's FIFA World Cup history from six raw CSV tables. Staging tables held the raw text; I then cleaned IDs, dates, and flags into a normalized schema of teams, players, matches, goals, appearances, and squads, with primary keys, foreign keys, and indexes, and loaded them in dependency order so every row kept referential integrity.</p>
+        <p>On top of the schema I wrote analytical queries for the 2014, 2018, and 2022 tournaments using CTEs, <code>DENSE_RANK()</code> and <code>RANK()</code> window functions, and a reusable view. A few findings: Mbappé and Messi tied for the most goals with 12 each; Croatia won all four of its penalty shootouts; the 90th minute produced 51 goals, more than four times any other minute; and France had the best record at 14 wins, 2 losses, and 3 draws.</p>
+        <div class="stats">
+          <div class="stat"><b>6</b><span>Normalized tables</span></div>
+          <div class="stat"><b>4–0</b><span>Croatia in shootouts</span></div>
+          <div class="stat"><b>51</b><span>Goals in the 90th minute</span></div>
+        </div>
+      </article>
 
+      <article id="congestion-pricing">
+        <h2>Congestion Pricing</h2>
+        <p class="meta"><b>Columbia University · Pei Lab, Mailman School of Public Health</b> · January 2026 – Present · Python (Google Colab), Advan/SafeGraph Weekly Patterns</p>
+        <p>NYC began charging a congestion pricing toll for driving into Manhattan below 60th Street on January 5, 2025. This project asks how that changed where people travel. I built a Python pipeline for this question, adapting an R workflow the group had used to study hurricane evacuation. It reads 68 weekly files of anonymized cellphone visit data, maps each visitor's home census tract to a ZIP code, corrects for visitors whose home is unknown, and spreads weekly counts across days.</p>
+        <p>The output is a daily NYC ZIP-code origin–destination dataset of 15.8 million rows, split into 7 business categories. I compared 30 days after the policy with a 13-day baseline before it and grouped the results by borough in heatmaps. The baseline overlaps the winter holidays, so these results are preliminary: some of the change may be seasonal rather than an effect of the policy.</p>
+        <div class="stats">
+          <div class="stat"><b>15.8M</b><span>Daily origin–destination rows</span></div>
+          <div class="stat"><b>68</b><span>Weekly mobility files</span></div>
+          <div class="stat"><b>7</b><span>Business categories</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
+<!-- RESUME -->
+<section data-view="resume">
+  <h1>Resume</h1>
+  <p class="actions"><a href="Veerapetch_Petchger_Resume.pdf">Download resume (PDF)</a><span>·</span><a href="#cv">View CV</a><span>·</span><a class="mail" href="mailto:vp2587@cumc.columbia.edu">vp2587@cumc.columbia.edu</a><span>·</span><a class="mail" href="mailto:veerapetchger@gmail.com">veerapetchger@gmail.com</a></p>
+  <figure class="pdf-view">
+    <img src="resume.png" width="1275" height="1650" alt="One-page resume of Veerapetch Petchger: education at Columbia and Maryland, research and teaching experience, projects, skills, and leadership.">
+  </figure>
+</section>
 
-</div>
-</div>
+<!-- CV -->
+<section data-view="cv">
+  <div class="proj">
+    <aside class="toc">
+      <h4>Sections</h4>
+      <a href="#education">Education</a>
+      <a href="#research">Research Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#projects-cv">Projects</a>
+      <a href="#service">Service and Leadership</a>
+      <a href="#skills">Skills</a>
+    </aside>
+    <div>
+      <h1>Curriculum Vitae</h1>
+      <p class="actions"><a href="Veerapetch_Petchger_Resume.pdf">Download resume (PDF)</a><span>·</span><a href="#resume">View resume</a><span>·</span><a class="mail" href="mailto:vp2587@cumc.columbia.edu">vp2587@cumc.columbia.edu</a><span>·</span><a class="mail" href="mailto:veerapetchger@gmail.com">veerapetchger@gmail.com</a></p>
+      <section class="cv-sec" id="education">
+        <h2>Education</h2>
+        <div class="cv-entry"><p class="cv-date">Expected May 2027</p><p class="cv-org"><b>Columbia University, Mailman School of Public Health</b> · New York, NY</p><p class="cv-role"><i>M.S. Biostatistics · GPA 3.58</i></p><ul><li>Coursework: Data Science I and II, Biostatistical Methods I and II, Statistical Inference, Probability, Epidemiology, SQL, Analysis of Longitudinal Data, Survival Analysis, Graphical Models, Causal Inference</li></ul></div>
+        <div class="cv-entry"><p class="cv-date"></p><p class="cv-org"><b>University of Maryland, College Park</b> · College Park, MD</p><p class="cv-role"><i>B.S. Public Health Science, Minor in Statistics</i></p></div>
+      </section>
+      <section class="cv-sec" id="research">
+        <h2>Research Experience</h2>
+        <div class="cv-entry"><p class="cv-date">August 2026 – Present</p><p class="cv-org"><b>Columbia University, Department of Biostatistics</b> · Remote</p><p class="cv-role"><i>Clinical Research Data Assistant</i></p><ul><li>Advanced the Retired NFL Players Baseline Assessment Program's brain health research by completing 60 case report forms in two months, each drawn from up to 20 medical and neuropsychological reports.</li><li>Safeguard the program's data quality through double-entry verification, with every discrepancy between independent entries reconciled before analysis.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">January 2026 – Present</p><p class="cv-org"><b>Columbia University, Mailman School of Public Health</b> · New York, NY</p><p class="cv-role"><i>Graduate Research Assistant</i></p><p class="cv-links"><a href="#congestion-pricing">Project page</a></p><ul><li>Enabled the Pei Lab's analysis of NYC's January 2025 congestion pricing by engineering a 15.8M-row daily ZIP-code mobility dataset from 68 weekly Advan/SafeGraph cellphone data files in Python.</li><li>Validated a Python rebuild of the lab's R mobility method by reproducing the expected holiday travel dip, implementing tract-to-ZIP mapping, unknown-visitor correction, and daily visit allocation.</li><li>Measured how travel shifted across 7 business categories and 5 boroughs by comparing 30 post-policy days with a 13-day baseline in heatmaps.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">July 2024 – July 2025</p><p class="cv-org"><b>University of Maryland, School of Public Health</b> · College Park, MD</p><p class="cv-role"><i>Graduate Research Assistant</i></p><ul><li>Established the research protocol for a federally funded, multi-agency pandemic communication study by authoring its IRB exemption proposal.</li><li>Synthesized interviews with 10 federal, state, and local health officials into progress reports for program leadership by coding them in NVivo.</li><li>Distilled CDC-aligned wastewater surveillance findings into reports and visualizations for public health preparedness planners.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">June 2023 – June 2024</p><p class="cv-org"><b>University of Maryland, School of Public Health</b> · College Park, MD</p><p class="cv-role"><i>Undergraduate Research Assistant</i></p><ul><li>Expanded an influenza transmission dataset by 41% (71 donors) by coordinating recruitment at the University Health Center.</li><li>Prepared analysis-ready data for a randomized controlled trial on infectious disease transmission through 90+ hours of collection, cleaning, and aggregation in R.</li></ul></div>
+      </section>
+      <section class="cv-sec" id="teaching">
+        <h2>Teaching</h2>
+        <div class="cv-entry"><p class="cv-date">September 2026 – Present</p><p class="cv-org"><b>Columbia University, Department of Biostatistics</b> · New York, NY</p><p class="cv-role"><i>Teaching Assistant, SQL (P8180)</i></p><ul><li>Strengthen the SQL skills of 38 graduate students working with real-world health data by assisting weekly class sessions and checking their queries for correctness.</li><li>Deliver timely, consistent feedback by grading checkpoint design plans and quizzes, resolving grading questions, and arranging make-up quizzes with the instructor and co-TA.</li></ul></div>
+      </section>
+      <section class="cv-sec" id="projects-cv">
+        <h2>Projects</h2>
+        <div class="cv-entry"><p class="cv-date">August 2026</p><p class="cv-org"><b>South Korea Population Simulator</b></p><p class="cv-role"><i>Personal project · interactive web tool</i></p><p class="cv-links"><a href="#korea-simulator">Project page</a> · <a href="https://vp2587.github.io/korean_taxable_wages/">Live tool</a></p><ul><li>Forecast a century of population decline and rising dependency ratios under South Korea's record-low 0.75 fertility rate in a public cohort-component tool.</li><li>Decomposed Korea's taxable wage base into workforce-decline and wage-growth effects using age–gender wage profiles calibrated to OECD data (0.7% annual real wage growth).</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">May 2026</p><p class="cv-org"><b>Predicting Severe COVID-19 Infection</b></p><p class="cv-role"><i>Data Science II (P8106) final project · R</i></p><p class="cv-links"><a href="#covid-severity">Project page</a></p><ul><li>Achieved a test AUC of 0.882 on 1,000 participants by benchmarking six classifiers (logistic, elastic net, random forest, AdaBoost, linear and radial SVM) with 10-fold cross-validation.</li><li>Pinpointed vaccination status and systolic blood pressure as the top 2 risk factors, consistent across two models, using variable importance and partial dependence.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">March 2026</p><p class="cv-org"><b>Breast Cancer Progression-Free Survival Across Two Cohorts</b></p><p class="cv-role"><i>Data Science II (P8106) midterm project, with Heather Lu and Clement Li · R</i></p><p class="cv-links"><a href="https://github.com/heather-lu/breast-cancer-pfs-prediction">Code</a> · <a href="https://github.com/heather-lu/breast-cancer-pfs-prediction/blob/main/dsci_II_midterm.pdf">Report</a></p><ul><li>Delivered an interpretable LASSO model for 2,000 patients (test RMSE 0.684) by benchmarking six regression models (OLS, ridge, LASSO, elastic net, GAM, MARS) with 10-fold cross-validation.</li><li>Exposed a 21% rise in prediction error (RMSE 0.684 to 0.829) in a cohort treated a decade later and traced it to shifts in HER2 and hormonal therapy effects, underscoring the need to revalidate models.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">Spring 2026</p><p class="cv-org"><b>FIFA World Cup Relational Database</b></p><p class="cv-role"><i>SQL final project · MySQL</i></p><p class="cv-links"><a href="#world-cup-sql">Project page</a></p><ul><li>Architected a six-table MySQL database of 2014–2022 World Cup data with full referential integrity by designing a normalized schema with keys and indexes and cleaning raw staging tables.</li><li>Extracted insights on scorers, penalty shootouts, squad depth, and team records across 8 analytical questions by writing CTE, window-function, and view-based queries.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">Fall 2025</p><p class="cv-org"><b>Breast Cancer Outcomes from Clinical Features and Protein Biomarkers</b></p><p class="cv-role"><i>Data Science I (P8105) · R</i></p><ul><li>Developed regression and survival models on cleaned clinical data and documented reproducible code in GitHub.</li></ul></div>
+      </section>
+      <section class="cv-sec" id="service">
+        <h2>Service and Leadership</h2>
+        <div class="cv-entry"><p class="cv-date">2026 – Present</p><p class="cv-org"><b>Columbia University, Mailman School of Public Health</b> · New York, NY</p><p class="cv-role"><i>R.I.S.E. Peer Mentor</i></p><ul><li>Guide three first-year MS Biostatistics students through their first year in the program.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">June 2026 – Present</p><p class="cv-org"><b>Columbia University, Department of Biostatistics</b> · New York, NY</p><p class="cv-role"><i>Student Ambassador</i></p></div>
+        <div class="cv-entry"><p class="cv-date">August 2023 – May 2024</p><p class="cv-org"><b>Association of Thai Students in the United States of America</b> · Washington, DC</p><p class="cv-role"><i>Southern Region Committee Member</i></p><ul><li>Organized intercollegiate events with five universities in collaboration with Royal Thai Embassy staff.</li></ul></div>
+        <div class="cv-entry"><p class="cv-date">June 2022 – May 2024</p><p class="cv-org"><b>Thai Student Association, University of Maryland</b> · College Park, MD</p><p class="cv-role"><i>Co-Founder and Co-President</i></p><ul><li>Led 10+ cultural events with 100+ attendees each and raised $4,000+; supported marketing for the Sawasdee DC Thai Festival.</li></ul></div>
+      </section>
+      <section class="cv-sec" id="skills">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Programming</dt><dd>R (tidyverse, caret, tidymodels, glmnet, mgcv, gtsummary), SQL (MySQL, SQLite, H2), SAS, Python (foundational)</dd>
+          <dt>Methods</dt><dd>Penalized regression (LASSO, ridge, elastic net), GAM, MARS, random forests, boosting, SVMs, survival analysis, cross-validation, ROC/AUC, data cleaning and EDA</dd>
+          <dt>Tools</dt><dd>RStudio, R Markdown, Git/GitHub, DbVisualizer, Jupyter Notebooks, Google Colab, NVivo, Microsoft Office</dd>
+          <dt>Languages</dt><dd>English, Thai, French</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>
 
-</div>
+<footer>© 2026 Veerapetch Petchger</footer>
+</main>
 
 <script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
+document.addEventListener("click",function(e){
+  var b=e.target.closest(".copy"); if(!b) return;
+  var t=b.getAttribute("data-copy");
+  function done(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1500)}
+  function fallback(){var el=b.parentNode.querySelector(".em-addr");var r=document.createRange();r.selectNodeContents(el);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent="Selected"}
+  try{navigator.clipboard.writeText(t).then(done,fallback)}catch(_){fallback()}
 });
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
-
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
+(function(){
+  var views = ["home","projects","resume","cv"];
+  var projectIds = ["korea-simulator","covid-severity","breast-cancer-pfs","world-cup-sql","congestion-pricing"];
+  var cvIds = ["education","research","teaching","projects-cv","service","skills"];
+  function route(){
+    var h = (location.hash || "#home").slice(1);
+    var view = views.indexOf(h) > -1 ? h : (projectIds.indexOf(h) > -1 ? "projects" : (cvIds.indexOf(h) > -1 ? "cv" : "home"));
+    document.querySelectorAll("section[data-view]").forEach(function(s){
+      s.classList.toggle("show", s.getAttribute("data-view") === view);
+    });
+    document.querySelectorAll("[data-link]").forEach(function(a){
+      a.classList.toggle("on", a.getAttribute("data-link") === view);
+    });
+    var target = (projectIds.indexOf(h) > -1 || cvIds.indexOf(h) > -1) ? document.getElementById(h) : null;
+    if (target) { target.scrollIntoView(); } else { window.scrollTo(0,0); }
+  }
+  window.addEventListener("hashchange", route);
+  route();
+})();
 </script>
 
 </body>
